@@ -8,12 +8,12 @@ import java.util.Random;
 
 public class App {
     public static void main(String[] args) throws InterruptedException {
-        int num = 1;
+        int num = 2;
         String word = pluralize("dog", num) + "s";
         if (num == 1) {
             System.out.println("I own " + num + " " + pluralize("dog", num) + ".");
         } else {
-            System.out.println("I own " + num + " " + pluralize(word, num) + ".");
+            System.out.println("I own " + num + " " +word+ ".");
         }
         flipNHeads(3);
         for (int i = 0; i < 1000; i++) {
@@ -44,7 +44,7 @@ public class App {
         }
         System.out.println("it took " + contFlips + " flips to flip " + n + " heads in a row");
     }
-// Function to  show the clock
+// Function to  show the clock.
     static void clock() {
         LocalDateTime now = LocalDateTime.now();
         String time = now.format(DateTimeFormatter.ofPattern("HH:mm:ss"));

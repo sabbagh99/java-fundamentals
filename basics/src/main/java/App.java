@@ -6,28 +6,22 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Random;
 
-
 public class App {
-
-
     public static void main(String[] args) throws InterruptedException {
         int num = 1;
-        String word = pluralize("dog",num)+"s";
-        if (num==1){
-            System.out.println("I own "+num+" "+pluralize("dog",num)+".");
-        }else {
-            System.out.println("I own "+num+" "+pluralize(word,num)+".");
-
+        String word = pluralize("dog", num) + "s";
+        if (num == 1) {
+            System.out.println("I own " + num + " " + pluralize("dog", num) + ".");
+        } else {
+            System.out.println("I own " + num + " " + pluralize(word, num) + ".");
         }
-flipNHeads(3);
-
+        flipNHeads(3);
         for (int i = 0; i < 1000; i++) {
             clock();
             Thread.sleep(1000);
-
         }
-
     }
+
     static String pluralize(String w1, int n1) {
         return w1;
     }
@@ -36,9 +30,7 @@ flipNHeads(3);
         int contFlips = 0;
         int contHeads = 0;
         Random rd = new Random();
-
-
-        while (contHeads<n){
+        while (contHeads < n) {
             float rand = rd.nextFloat();
             if (rand < 0.5) {
                 System.out.println("tails");
@@ -50,9 +42,10 @@ flipNHeads(3);
                 contFlips++;
             }
         }
-        System.out.println("it took "+contFlips+" flips to flip "+n+ " heads in a row");
+        System.out.println("it took " + contFlips + " flips to flip " + n + " heads in a row");
     }
-    static void clock(){
+
+    static void clock() {
         LocalDateTime now = LocalDateTime.now();
         String time = now.format(DateTimeFormatter.ofPattern("HH:mm:ss"));
         System.out.println(time);

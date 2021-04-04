@@ -25,7 +25,7 @@ public class App {
     static String pluralize(String w1, int n1) {
         return w1;
     }
-
+// function to flip coin using random numbers
     static void flipNHeads(int n) {
         int contFlips = 0;
         int contHeads = 0;
@@ -44,7 +44,7 @@ public class App {
         }
         System.out.println("it took " + contFlips + " flips to flip " + n + " heads in a row");
     }
-
+// Function to  show the clock
     static void clock() {
         LocalDateTime now = LocalDateTime.now();
         String time = now.format(DateTimeFormatter.ofPattern("HH:mm:ss"));

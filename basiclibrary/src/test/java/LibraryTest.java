@@ -4,6 +4,8 @@
 
 import org.junit.Test;
 
+import java.util.Arrays;
+
 import static org.junit.Assert.*;
 
 public class LibraryTest {
@@ -29,5 +31,33 @@ public class LibraryTest {
     @Test public void testArrayAvg() {
         Library classUnderTest = new Library();
         assertEquals(4,classUnderTest.arrayAvg());
+    }
+    @Test public  void testMulti(){
+        Library classUnderTest = new Library();
+        int [][] s = {
+                {66, 64, 58, 65, 71, 57, 60},
+                {57, 65, 65, 70, 72, 60, 51},
+                {55, 54, 60, 53, 59, 57, 61},
+                {65, 56, 55, 52, 50, 62, 57}
+        };
+        int[] ex = {65, 56, 55, 52, 50, 62, 57};
+        assertArrayEquals(ex,classUnderTest.multi(s));
+    }
+    @Test  public  void testWeather(){
+        Library classUnderTest = new Library();
+        int [][] s =  {
+                {66, 64, 58, 65, 71, 57, 60},
+                {57, 65, 65, 70, 72, 65, 51},
+                {55, 54, 60, 53, 59, 57, 61},
+                {65, 56, 55, 52, 55, 62, 57}
+        };
+        int[] ex = {72,50};
+//        String ex1 = Arrays.toString(ex);
+//        String ex2 = Arrays.toString(classUnderTest.weather(s));
+
+//        assertEquals(ex1,ex2);
+       String str = "Never saw temperature: 63"+"\nNever saw temperature: 67"+"\nNever saw temperature: 68"+"\nNever saw temperature: 69";
+
+        assertEquals(str,classUnderTest.weather(s));
     }
 }

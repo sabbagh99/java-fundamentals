@@ -9,7 +9,8 @@ public class Library {
     public boolean someLibraryMethod() {
         return true;
     }
-//------------------------------------------------------------------------------------------------
+
+    //------------------------------------------------------------------------------------------------
     //     roll function
     static int[] roll(int n) {
         int max = 6;
@@ -22,7 +23,8 @@ public class Library {
 
         return array;
     }
-//------------------------------------------------------------------------------------------------
+
+    //------------------------------------------------------------------------------------------------
     // contains Duplicates function
     static boolean containsDuplicates() {
         int max = 6;
@@ -42,42 +44,99 @@ public class Library {
             return false;
         }
     }
-//------------------------------------------------------------------------------------------------
+
+    //------------------------------------------------------------------------------------------------
     // avg function
-static int arrayAvg(){
-    int [] arr = {1,2,3,4,5,9};
-    int sum = 0;
-    int avg;
-    for(int ele:arr){
-        sum += ele;
-    }
-    avg = sum/arr.length;
-    return avg;
-}
-//------------------------------------------------------------------------------------------------
-//    2DArray funcation
-static void multi (){
-    int[][] array = {
-            {66, 64, 58, 65, 71, 57, 60},
-            {57, 65, 65, 70, 72, 65, 51},
-            {55, 54, 60, 53, 59, 57, 61},
-            {65, 56, 55, 52, 55, 62, 57}
-    };
-    int sum =0;
-    for(int i=0;i<array.length;i++){
-        for(int ele:array[i]){
-            sum+= ele;
+    static int arrayAvg() {
+        int[] arr = {1, 2, 3, 4, 5, 9};
+        int sum = 0;
+        int avg;
+        for (int ele : arr) {
+            sum += ele;
         }
-        System.out.println(sum);
+        avg = sum / arr.length;
+        return avg;
     }
 
-}
+    //------------------------------------------------------------------------------------------------
+//    2DArray funcation
+    static int[] multi(int[][] array) {
+        int sum = 0, avg = 0;
+        ArrayList<Integer> avgArr = new ArrayList<Integer>();
+        for (int i = 0; i < array.length; i++) {
+            for (int ele : array[i]) {
+                sum += ele;
+            }
+            avg = sum / array[i].length;
+            avgArr.add(avg);
+            sum = 0;
+        }
+        int arrNum = avgArr.indexOf(Collections.min(avgArr));
+        return array[arrNum];
+    }
+
+//------------------------------------------------------------------------------------------------
+
+    static String weather(int [][] passArr){
+        int max = getMaxValue(passArr);
+        int min = getMinValue(passArr);
+        System.out.println("High: "+max);
+        System.out.println("Low: "+min);
+        int [] ret = {max,min};
+        Set <Integer> array = new HashSet<>();
+        for (int i = 0; i < passArr.length; i++) {
+            for (int j = 0; j < passArr[i].length; j++) {
+                array.add(passArr[i][j]);
+            }
+        }
+        Arrays.asList(array);
+        List<Integer> numbersList = new ArrayList<Integer>(array);
+        List<Integer> notExist = new ArrayList<Integer>();
+        Collections.sort(numbersList);
+        for(int i=0;i<numbersList.size()-1;i++){
+            int first = numbersList.get(i+1);
+            int second  = numbersList.get(i)+1;
+            while(first!=second){
+
+                notExist.add(second);
+                second++;
+            }
+        }
+        String str = null;
+        for(int i=0;i<notExist.size();i++){
+              str = "Never saw temperature: "+notExist.get(0)+"\nNever saw temperature: "+notExist.get(1)+"\nNever saw temperature: "+notExist.get(2)+"\nNever saw temperature: "+notExist.get(3);
+
+        }
+        return str;
+
+    }
+    public static int getMaxValue(int[][] numbers) {
+        int maxValue = numbers[0][0];
+        for (int j = 0; j < numbers.length; j++) {
+            for (int i = 0; i < numbers[j].length; i++) {
+                if (numbers[j][i] > maxValue) {
+                    maxValue = numbers[j][i];
+                }
+            }
+        }
+        return maxValue;
+    }
+    public static int getMinValue(int[][] numbers) {
+        int minValue = numbers[0][0];
+        for (int j = 0; j < numbers.length; j++) {
+            for (int i = 0; i < numbers[j].length; i++) {
+                if (numbers[j][i] < minValue ) {
+                    minValue = numbers[j][i];
+                }
+            }
+        }
+        return minValue ;
+    }
 //------------------------------------------------------------------------------------------------
     public static void main(String[] args) {
-        System.out.println(Arrays.toString(roll(5)));
-        System.out.print(containsDuplicates());
-        arrayAvg();
-        multi();
+//        System.out.println(Arrays.toString(roll(5)));
+//        System.out.print(containsDuplicates());
+//        arrayAvg();
 
     }
 }

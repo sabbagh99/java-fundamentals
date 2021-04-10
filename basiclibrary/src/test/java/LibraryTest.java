@@ -9,29 +9,30 @@ import java.util.Arrays;
 import static org.junit.Assert.*;
 
 public class LibraryTest {
-    @Test public void testSomeLibraryMethod() {
+
+
+    @Test
+    public void testRoll() {
         Library classUnderTest = new Library();
-        assertTrue("someLibraryMethod should return 'true'", classUnderTest.someLibraryMethod());
-    }
-
-
-    @Test public void testRoll() {
-
-        Library classUnderTest = new Library();
-         int[] arr = classUnderTest.roll(5);
-        assertEquals("This array should have random number between 1-6", 5,arr.length);
-
+        assertEquals("This array should have random number between 1-6", 5,classUnderTest.roll(5).length);
     }
 
     @Test public void testContainsDuplicates() {
         Library classUnderTest = new Library();
-        assertTrue("It's should return 'true'", classUnderTest.containsDuplicates());
-//        assertFalse("It's should return 'false'", classUnderTest.containsDuplicates());
+        int[] arr = {1, 2, 3, 4, 5, 9};
+        int[] arrT = {5, 9, 4, 1, 4, 9};
+        assertTrue("It's should return 'true'", classUnderTest.containsDuplicates(arrT));
+        assertFalse("It's should return 'false'", classUnderTest.containsDuplicates(arr));
     }
+
     @Test public void testArrayAvg() {
         Library classUnderTest = new Library();
-        assertEquals(4,classUnderTest.arrayAvg());
+        int[] arr = {1, 2, 3, 4, 5, 9};
+        int [] arrT = {};
+        assertEquals(4,classUnderTest.arrayAvg(arr));
+        assertEquals(0,classUnderTest.arrayAvg(arrT));
     }
+
     @Test public  void testMulti(){
         Library classUnderTest = new Library();
         int [][] s = {
@@ -40,24 +41,7 @@ public class LibraryTest {
                 {55, 54, 60, 53, 59, 57, 61},
                 {65, 56, 55, 52, 50, 62, 57}
         };
-        int[] ex = {65, 56, 55, 52, 50, 62, 57};
-        assertArrayEquals(ex,classUnderTest.multi(s));
+        assertArrayEquals((s[3]),(classUnderTest.multi((s))));
     }
-    @Test  public  void testWeather(){
-        Library classUnderTest = new Library();
-        int [][] s =  {
-                {66, 64, 58, 65, 71, 57, 60},
-                {57, 65, 65, 70, 72, 65, 51},
-                {55, 54, 60, 53, 59, 57, 61},
-                {65, 56, 55, 52, 55, 62, 57}
-        };
-        int[] ex = {72,50};
-//        String ex1 = Arrays.toString(ex);
-//        String ex2 = Arrays.toString(classUnderTest.weather(s));
 
-//        assertEquals(ex1,ex2);
-       String str = "Never saw temperature: 63"+"\nNever saw temperature: 67"+"\nNever saw temperature: 68"+"\nNever saw temperature: 69";
-
-        assertEquals(str,classUnderTest.weather(s));
-    }
 }

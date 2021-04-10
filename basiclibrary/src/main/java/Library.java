@@ -26,35 +26,32 @@ public class Library {
 
     //------------------------------------------------------------------------------------------------
     // contains Duplicates function
-    static boolean containsDuplicates() {
-        int max = 6;
-        int min = 1;
-        int range = max - min + 1;
-
+    static boolean containsDuplicates(int[] arr) {
         Set<Integer> s = new HashSet<Integer>();
-        for (int i = 0; i < 10; i++) {
-            int rand = (int) (Math.random() * range) + min;
-            s.add(rand);
+        for (int i = 0; i < arr.length; i++) {
+            s.add(arr[i]);
         }
         if (s.size() < 6) {
-            // System.out.println(true);
             return true;
         } else {
-            // System.out.println(false);
             return false;
         }
     }
 
     //------------------------------------------------------------------------------------------------
     // avg function
-    static int arrayAvg() {
-        int[] arr = {1, 2, 3, 4, 5, 9};
+    static int arrayAvg(int[] arr) {
         int sum = 0;
         int avg;
         for (int ele : arr) {
             sum += ele;
         }
-        avg = sum / arr.length;
+
+        if (arr.length > 0) {
+            avg = sum / arr.length;
+        } else {
+            avg = 0;
+        }
         return avg;
     }
 
@@ -77,66 +74,9 @@ public class Library {
 
 //------------------------------------------------------------------------------------------------
 
-    static String weather(int [][] passArr){
-        int max = getMaxValue(passArr);
-        int min = getMinValue(passArr);
-        System.out.println("High: "+max);
-        System.out.println("Low: "+min);
-        int [] ret = {max,min};
-        Set <Integer> array = new HashSet<>();
-        for (int i = 0; i < passArr.length; i++) {
-            for (int j = 0; j < passArr[i].length; j++) {
-                array.add(passArr[i][j]);
-            }
-        }
-        Arrays.asList(array);
-        List<Integer> numbersList = new ArrayList<Integer>(array);
-        List<Integer> notExist = new ArrayList<Integer>();
-        Collections.sort(numbersList);
-        for(int i=0;i<numbersList.size()-1;i++){
-            int first = numbersList.get(i+1);
-            int second  = numbersList.get(i)+1;
-            while(first!=second){
 
-                notExist.add(second);
-                second++;
-            }
-        }
-        String str = null;
-        for(int i=0;i<notExist.size();i++){
-              str = "Never saw temperature: "+notExist.get(0)+"\nNever saw temperature: "+notExist.get(1)+"\nNever saw temperature: "+notExist.get(2)+"\nNever saw temperature: "+notExist.get(3);
-
-        }
-        return str;
-
-    }
-    public static int getMaxValue(int[][] numbers) {
-        int maxValue = numbers[0][0];
-        for (int j = 0; j < numbers.length; j++) {
-            for (int i = 0; i < numbers[j].length; i++) {
-                if (numbers[j][i] > maxValue) {
-                    maxValue = numbers[j][i];
-                }
-            }
-        }
-        return maxValue;
-    }
-    public static int getMinValue(int[][] numbers) {
-        int minValue = numbers[0][0];
-        for (int j = 0; j < numbers.length; j++) {
-            for (int i = 0; i < numbers[j].length; i++) {
-                if (numbers[j][i] < minValue ) {
-                    minValue = numbers[j][i];
-                }
-            }
-        }
-        return minValue ;
-    }
 //------------------------------------------------------------------------------------------------
     public static void main(String[] args) {
-//        System.out.println(Arrays.toString(roll(5)));
-//        System.out.print(containsDuplicates());
-//        arrayAvg();
 
     }
 }

@@ -4,3 +4,5 @@
 1. ## [Lab One](basics/README.md) :  Java primitives and control flow.
 
 2. ## [Lab Tow](basiclibrary/README.md) :Arrays, for loops, testing.
+
+2. ## [Lab Three](basiclibrary/README.md) :Maps and File I/O.

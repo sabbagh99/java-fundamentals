@@ -72,10 +72,86 @@ public class Library {
         return array[arrNum];
     }
 
-//------------------------------------------------------------------------------------------------
+    //------------------------------------------------------------------------------------------------
+    static String weather(int[][] passArr) {
+        int max = getMaxValue(passArr);
+        int min = getMinValue(passArr);
+        String str = "";
 
+        str += "High: " + max + "\nLow: " + min;
 
-//------------------------------------------------------------------------------------------------
+        int[] ret = {max, min};
+        Set<Integer> array = new HashSet<>();
+        for (int i = 0; i < passArr.length; i++) {
+            for (int j = 0; j < passArr[i].length; j++) {
+                array.add(passArr[i][j]);
+            }
+        }
+        Arrays.asList(array);
+        List<Integer> numbersList = new ArrayList<Integer>(array);
+        List<Integer> notExist = new ArrayList<Integer>();
+        Collections.sort(numbersList);
+        for (int i = 0; i < numbersList.size() - 1; i++) {
+            int first = numbersList.get(i + 1);
+            int second = numbersList.get(i) + 1;
+            while (first != second) {
+
+                notExist.add(second);
+                second++;
+            }
+        }
+        for (int i = 0; i < notExist.size(); i++) {
+            str += "\nNever saw temperature: " + notExist.get(i);
+        }
+
+        return str;
+
+    }
+    public static int getMaxValue(int[][] numbers) {
+        int maxValue = numbers[0][0];
+        for (int j = 0; j < numbers.length; j++) {
+            for (int i = 0; i < numbers[j].length; i++) {
+                if (numbers[j][i] > maxValue) {
+                    maxValue = numbers[j][i];
+                }
+            }
+        }
+        return maxValue;
+    }
+    public static int getMinValue(int[][] numbers) {
+        int minValue = numbers[0][0];
+        for (int j = 0; j < numbers.length; j++) {
+            for (int i = 0; i < numbers[j].length; i++) {
+                if (numbers[j][i] < minValue) {
+                    minValue = numbers[j][i];
+                }
+            }
+        }
+        return minValue;
+    }
+    //------------------------------------------------------------------------------------------------
+    public static String tally(List<String> votes) {
+        Map<String, Integer> name = new HashMap<String, Integer>();
+        for (String key : votes) {
+            if (name.containsKey(key)) {
+                name.put((key), name.get(key) + 1);
+            } else {
+                name.put(key, 1);
+            }
+        }
+        Integer maxVotes = Collections.max(name.values());
+        String winner = "";
+        for (Map.Entry<String, Integer> key : name.entrySet()) {
+            if (key.getValue() == maxVotes) {
+                winner += key.getKey()+" ";
+            }
+        }
+        winner += "received the most votes!";
+        return winner;
+    }
+
+    //------------------------------------------------------------------------------------------------
+
     public static void main(String[] args) {
 
     }

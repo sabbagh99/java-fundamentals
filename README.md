@@ -5,4 +5,6 @@
 
 2. ## [Lab Tow](basiclibrary/README.md) :Arrays, for loops, testing.
 
-2. ## [Lab Three](basiclibrary/README.md) :Maps and File I/O.
+3. ## [Lab Three part 1](basiclibrary/README.md) :Maps.
+
+4. ## [Lab Three part 2](linter1/README.md) :Files I/O.

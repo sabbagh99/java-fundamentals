@@ -4,7 +4,9 @@
 
 import org.junit.Test;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 import static org.junit.Assert.*;
 
@@ -14,10 +16,11 @@ public class LibraryTest {
     @Test
     public void testRoll() {
         Library classUnderTest = new Library();
-        assertEquals("This array should have random number between 1-6", 5,classUnderTest.roll(5).length);
+        assertEquals("This array should have random number between 1-6", 5, classUnderTest.roll(5).length);
     }
 
-    @Test public void testContainsDuplicates() {
+    @Test
+    public void testContainsDuplicates() {
         Library classUnderTest = new Library();
         int[] arr = {1, 2, 3, 4, 5, 9};
         int[] arrT = {5, 9, 4, 1, 4, 9};
@@ -25,23 +28,62 @@ public class LibraryTest {
         assertFalse("It's should return 'false'", classUnderTest.containsDuplicates(arr));
     }
 
-    @Test public void testArrayAvg() {
+    @Test
+    public void testArrayAvg() {
         Library classUnderTest = new Library();
         int[] arr = {1, 2, 3, 4, 5, 9};
-        int [] arrT = {};
-        assertEquals(4,classUnderTest.arrayAvg(arr));
-        assertEquals(0,classUnderTest.arrayAvg(arrT));
+        int[] arrT = {};
+        assertEquals(4, classUnderTest.arrayAvg(arr));
+        assertEquals(0, classUnderTest.arrayAvg(arrT));
     }
 
-    @Test public  void testMulti(){
+    @Test
+    public void testMulti() {
         Library classUnderTest = new Library();
-        int [][] s = {
+        int[][] s = {
                 {66, 64, 58, 65, 71, 57, 60},
                 {57, 65, 65, 70, 72, 60, 51},
                 {55, 54, 60, 53, 59, 57, 61},
                 {65, 56, 55, 52, 50, 62, 57}
         };
-        assertArrayEquals((s[3]),(classUnderTest.multi((s))));
+        assertArrayEquals((s[3]), (classUnderTest.multi((s))));
     }
 
+    @Test
+    public void testWeather() {
+        Library classUnderTest = new Library();
+        int[][] s = {
+                {66, 64, 58, 65, 71, 57, 60},
+                {57, 65, 65, 70, 72, 65, 51},
+                {55, 54, 60, 53, 59, 57, 61},
+                {65, 56, 55, 52, 55, 62, 57}
+        };
+
+//
+        String str = "High: 72\n" +
+                "Low: 51\n" +
+                "Never saw temperature: 63\n" +
+                "Never saw temperature: 67\n" +
+                "Never saw temperature: 68\n" +
+                "Never saw temperature: 69";
+
+        assertEquals(str, classUnderTest.weather(s));
+    }
+
+    @Test
+    public void testTally() {
+        Library classUnderTest = new Library();
+        List<String> votes = new ArrayList<>();
+        votes.add("Bush");
+        votes.add("Bush");
+        votes.add("Bush");
+        votes.add("Shrub");
+        votes.add("Hedge");
+        votes.add("Shrub");
+        votes.add("Bush");
+        votes.add("Hedge");
+        votes.add("Bush");
+String str = "Bush received the most votes!";
+        assertEquals(str,classUnderTest.tally(votes));
+    }
 }

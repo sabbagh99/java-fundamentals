@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Arrays, Loops, Imports, Array
 ### In today lab we start dealing with arrays and crearting methods to do some functionlty like :
 #### 1. In the first method which called roll that we need to create an array with knowing length the length for the array we provied it as an argument then this method will generte array with random num and return this array.

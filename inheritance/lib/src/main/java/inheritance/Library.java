@@ -4,7 +4,14 @@
 package inheritance;
 
 public class Library {
-    public boolean someLibraryMethod() {
-        return true;
+
+    public static void main(String[] args) {
+        Restaurant restaurant = new Restaurant("Shawerma",4,5);
+
+        Review review = new Review("Very good restaurant","Ahmad Alsabbagh",4,restaurant.getName());
+
+//        System.out.println(restaurant.toString());
+        System.out.println(review.toString());
+
     }
 }

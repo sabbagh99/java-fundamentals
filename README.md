@@ -8,3 +8,7 @@
 3. ## [Lab Three part 1](basiclibrary/README.md) :Maps.
 
 4. ## [Lab Three part 2](linter1/README.md) :Files I/O.
+
+<!-- 5. ## [Lab four](bitMap/README.md) :Files I/O. -->
+
+6. ## [Lab six](inheritance/README.md) : Inheritance and Interfaces.

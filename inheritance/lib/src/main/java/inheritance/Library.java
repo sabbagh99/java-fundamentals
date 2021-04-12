@@ -6,11 +6,21 @@ package inheritance;
 public class Library {
 
     public static void main(String[] args) {
-        Restaurant addReview = new Review("Very good restaurant","Ahmad Alsabbagh",4,"shawerma",50);
-        Restaurant addReview1 = new Review("Very good restaurant","Ahmad Alsabbagh",4,"shawerma",50);
-        System.out.println(addReview);
-        System.out.println(addReview1);
-        System.out.println(addReview);
+        Restaurant restaurant = new Restaurant();
+        Review review = new Review("good","ahmad",2);
+        Review review1 = new Review("very good","ahmad",2,"shawerma");
+        Review review2 = new Review("nice","ahmad",2,"shawerma");
+        Theater theater = new Theater("Theater", "Mad Max");
+        Review reviewT = new Review("very good", "ahmad", 6, "tajCiname");
+        restaurant.addReview(review);
+        restaurant.addReview(review1);
+        restaurant.addReview(review2);
+        Shop shop = new Shop();
+        Review review3 = new Review("nice","ali",5,"ali baba");
+        shop.addReview(review3);
+        theater.addMovie(theater);
+        theater.removeMovie(theater);
+        theater.addReview(reviewT);
 
     }
 }

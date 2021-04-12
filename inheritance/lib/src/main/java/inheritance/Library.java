@@ -6,12 +6,11 @@ package inheritance;
 public class Library {
 
     public static void main(String[] args) {
-        Restaurant restaurant = new Restaurant("Shawerma",4,5);
-
-        Review review = new Review("Very good restaurant","Ahmad Alsabbagh",4,restaurant.getName());
-
-//        System.out.println(restaurant.toString());
-        System.out.println(review.toString());
+        Restaurant addReview = new Review("Very good restaurant","Ahmad Alsabbagh",4,"shawerma",50);
+        Restaurant addReview1 = new Review("Very good restaurant","Ahmad Alsabbagh",4,"shawerma",50);
+        System.out.println(addReview);
+        System.out.println(addReview1);
+        System.out.println(addReview);
 
     }
 }

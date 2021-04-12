@@ -8,12 +8,13 @@ public class Review extends Restaurant {
     public Review() {
     }
 
-    public Review(String body, String author, int numberOfStars, String restaurantReview) {
+    public Review(String body, String author, int numberOfStars, String restaurantName, int price) {
 
+        super(restaurantName, numberOfStars++,price);
         this.setAuthor(author);
         this.setBody(body);
         this.setNumberOfStars(numberOfStars);
-        super.setName(restaurantReview);
+
     }
 
     public String getBody() {
@@ -49,6 +50,7 @@ public class Review extends Restaurant {
                     ", author='" + author + '\'' +
                     ", numberOfStars=" + numberOfStars +
                     ",restaurantName =" + super.getName() +
+                    ", price=" + super.getPrice() + "$" +
                     '}';
         }
         return "you should add number of stars between 0-5";

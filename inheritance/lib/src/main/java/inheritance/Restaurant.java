@@ -1,7 +1,6 @@
 package inheritance;
 
 public class Restaurant {
-    Review review = new Review();
     private String name;
     private int numberOfStars;
     private int price;
@@ -13,10 +12,10 @@ public class Restaurant {
         this.setName(name);
         this.setNumberOfStars(numberOfStars);
         this.setPrice(price);
+
     }
 
-    public void addReview() {
-    }
+
 
     public String getName() {
         return name;

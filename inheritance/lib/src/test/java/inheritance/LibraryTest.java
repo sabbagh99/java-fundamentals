@@ -5,9 +5,20 @@ package inheritance;
 
 import org.junit.Test;
 
+import static org.junit.Assert.assertEquals;
+
+
 public class LibraryTest {
     @Test
     public void testRestaurant() {
+
+        Restaurant shawermaRestaurent = new Restaurant("pizza Restaurent", "$$");
+
+        Review shawermaReview = new Review("ahmad alsabbagh", 3, "not bad", shawermaRestaurent);
+        shawermaRestaurent.addReview(shawermaReview);
+        assertEquals("Restaurant{name='pizza Restaurent', stars=3.0, price='$$',review[Review :, body='not bad'author='ahmad alsabbagh', stars=3restarunt name pizza Restaurent}]}", shawermaRestaurent.toString());
+        assertEquals("Review :, body='not bad'author='ahmad alsabbagh', stars=3restarunt name pizza Restaurent}", shawermaReview.toString());
+        assertEquals(3.0, shawermaRestaurent.addReview(shawermaReview), 0);
 
     }
 }

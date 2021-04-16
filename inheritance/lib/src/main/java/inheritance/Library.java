@@ -6,16 +6,16 @@ package inheritance;
 public class Library {
 
     public static void main(String[] args) {
-        Restaurant shwaermResturant = new Restaurant("pqzza resorant", "$$$");
-        Restaurant burgerResturant = new Restaurant("burgar restarent ", "$$$");
-        Restaurant mansefResturant = new Restaurant("mansef restarnent", "$$$$");
-        Review shwaermReview = new Review("ahmad alsabbagh", 2, "very good",shwaermResturant);
-        Review shwaermReview2 = new Review("ahmad alsabbagh", 4, "very good",shwaermResturant);
+        Restaurant shawermaRestaurent = new Restaurant("pizza Restaurent", "$$");
+        Restaurant burgerResturant = new Restaurant("burgar Restaurent ", "$$$");
+        Restaurant mansefResturant = new Restaurant("mansef Restaurent", "$$$$");
+        Review shawermaReview = new Review("ahmad alsabbagh", 3, "not bad", shawermaRestaurent);
+        Review shawermaReview2 = new Review("ahmad alsabbagh", 4, "very good",shawermaRestaurent);
 
         Review burgerReview = new Review(" abdullah ", 4, " nice one ",burgerResturant);
-        shwaermResturant.addReview(shwaermReview);
-        shwaermResturant.addReview(shwaermReview2);
-        System.out.println(shwaermResturant);
+//        shawermaRestaurent.addReview(shawermaReview);
+        System.out.println(shawermaReview);
+//        System.out.println(shawermaRestaurent);
 
     }
 }

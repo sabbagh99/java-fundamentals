@@ -11,14 +11,19 @@ import static org.junit.Assert.assertEquals;
 public class LibraryTest {
     @Test
     public void testRestaurant() {
-
         Restaurant shawermaRestaurent = new Restaurant("pizza Restaurent", "$$");
-
         Review shawermaReview = new Review("ahmad alsabbagh", 3, "not bad", shawermaRestaurent);
         shawermaRestaurent.addReview(shawermaReview);
+        Shop shop = new Shop("M&M", "goooood", "$$$");
+        Review shopreview = new Review("Ahmad Alsabbagh", 5, "nice", shop);
+        Theater theater = new Theater("taj Cinama", "mad max");
+        Review theaterReview = new Review("Ahmad", 5, "good move", theater);
         assertEquals("Restaurant{name='pizza Restaurent', stars=3.0, price='$$',review[Review :, body='not bad'author='ahmad alsabbagh', stars=3restarunt name pizza Restaurent}]}", shawermaRestaurent.toString());
         assertEquals("Review :, body='not bad'author='ahmad alsabbagh', stars=3restarunt name pizza Restaurent}", shawermaReview.toString());
-        assertEquals(3.0, shawermaRestaurent.addReview(shawermaReview), 0);
+        assertEquals("Shop{name='M&M', description='goooood', price='$$$'}", shop.toString());
+        assertEquals("Review :, body='nice'author='Ahmad Alsabbagh', stars=5restarunt name M&M}", shopreview.toString());
+        assertEquals("Theater{name='taj Cinama', movies='mad max'}", theater.toString());
+        assertEquals("Review :, body='good move'author='Ahmad', stars=5restarunt name taj Cinama}", theaterReview.toString());
 
     }
 }

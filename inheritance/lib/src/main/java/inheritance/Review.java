@@ -6,22 +6,22 @@ public class Review {
     private String author;
     private int stars;
     private String body;
-    private Restaurant restaurant;
+    private place place;
 
-    public Review(String author, int stars, String body, Restaurant restaurant) {
+    public Review(String author, int stars, String body, place place) {
         this.author = author;
         checkStars(stars);
         this.body = body;
-        this.restaurant = restaurant;
+        this.place = place;
 
     }
 
-    public Restaurant getRestaurant() {
-        return restaurant;
+    public place getPlace() {
+        return place;
     }
 
-    public void setRestaurant(Restaurant restaurant) {
-        this.restaurant = restaurant;
+    public void setPlace(place place) {
+        this.place = place;
     }
 
     private void checkStars(int stars) {
@@ -65,9 +65,9 @@ public class Review {
         return stars;
     }
 
-    private String getRestarantName() {
-        if (restaurant != null)
-            return restaurant.getName();
+    private String getPlaceName() {
+        if (place != null)
+            return place.getName();
         else
             return "the resturant is not defaind";
     }
@@ -77,12 +77,12 @@ public class Review {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Review review = (Review) o;
-        return stars == review.stars && Objects.equals(author, review.author) && Objects.equals(body, review.body) && Objects.equals(restaurant, review.restaurant);
+        return stars == review.stars && Objects.equals(author, review.author) && Objects.equals(body, review.body) && Objects.equals(place, review.place);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(author, stars, body, restaurant);
+        return Objects.hash(author, stars, body, place);
     }
 
     @Override
@@ -91,7 +91,7 @@ public class Review {
                 ", body='" + body + '\'' +
                 "author='" + author + '\'' +
                 ", stars=" + stars +
-                "restarunt name " + restaurant.getName() +
+                "restarunt name " + place.getName() +
                 '}';
     }
 }

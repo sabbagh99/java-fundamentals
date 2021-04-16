@@ -2,15 +2,14 @@ package inheritance;
 
 import java.util.ArrayList;
 
-public class Restaurant {
-    private String name;
+public class Restaurant extends place{
     private double stars;
     private String price;
     private ArrayList<Review> reviewRestaurant = new ArrayList<Review>();
 
 
     public Restaurant(String name, String price) {
-        this.name = name;
+        super(name);
 //        this.stars = stars;
         this.price = price;
     }
@@ -24,13 +23,12 @@ public class Restaurant {
         return this.stars;
     }
 
-    public double addReview(Review review) {
+    public void addReview(Review review) {
 
         if (!reviewRestaurant.contains(review)) {
             this.reviewRestaurant.add(review);
             avgStars();
         }
-        return avgStars();
     }
 
     public String getName() {

@@ -8,7 +8,7 @@ public class Review {
     private String body;
     private Restaurant restaurant;
 
-    public Review(String author, int stars, String body,Restaurant restaurant) {
+    public Review(String author, int stars, String body, Restaurant restaurant) {
         this.author = author;
         checkStars(stars);
         this.body = body;

@@ -9,7 +9,7 @@ public class Library {
         Restaurant shawermaRestaurent = new Restaurant("pizza Restaurent", "$$");
         Restaurant burgerResturant = new Restaurant("burgar Restaurent ", "$$$");
         Restaurant mansefResturant = new Restaurant("mansef Restaurent", "$$$$");
-        Review shawermaReview = new Review("ahmad alsabbagh", 3, "not bad",shawermaRestaurent);
+        Review shawermaReview = new Review("ahmad alsabbagh", 3, "not bad", shawermaRestaurent);
         Review shawermaReview2 = new Review("ahmad alsabbagh", 4, "very good",shawermaRestaurent);
 
         Review burgerReview = new Review(" abdullah ", 4, " nice one ",burgerResturant);

@@ -9,7 +9,6 @@ public class Restaurant {
     private ArrayList<Review> reviewRestaurant = new ArrayList<Review>();
 
 
-
     public Restaurant(String name, String price) {
         this.name = name;
 //        this.stars = stars;

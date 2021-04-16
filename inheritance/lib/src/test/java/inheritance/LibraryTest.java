@@ -4,32 +4,10 @@
 package inheritance;
 
 import org.junit.Test;
-import static org.junit.Assert.*;
 
 public class LibraryTest {
-    @Test public  void testRestaurant(){
-        Restaurant restaurant = new Restaurant("Shawerma",3,30);
-        Restaurant restaurant1 = new Restaurant("Shawerma",7,50);
-
-        assertEquals("Restaurant{name='Shawerma', numberOfStars=3, price=30$}",restaurant.toString());
-        assertEquals("you should add number of stars between 0-5",restaurant1.toString());
-
-
-    }
-//    @Test public  void testReview(){
-//
-//        Review review = new Review("Very good restaurant","Ahmad Alsabbagh",4,"shawerma",50);
-//
-//        Review review1 = new Review("Very good restaurant","Ahmad Alsabbagh",8,"shawerma",50);
-//
-//        assertEquals("Review{body='Very good restaurant', author='Ahmad Alsabbagh', numberOfStars=4,restaurantName =shawerma, price=50$}",review.toString());
-//        assertEquals("you should add number of stars between 0-5",review1.toString());
-//
-//
-//    }
-    @Test public  void  testShop(){
-        Shop shop = new Shop("ali Baba","online shop",50);
-        assertEquals("Shop{name='ali Baba', description='online shop', number=50$}",shop.toString());
+    @Test
+    public void testRestaurant() {
 
     }
 }

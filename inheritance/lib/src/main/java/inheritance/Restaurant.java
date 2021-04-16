@@ -16,20 +16,22 @@ public class Restaurant {
         this.price = price;
     }
 
-    public void avgStars() {
+    public double avgStars() {
         double sum = 0;
         for (Review review : reviewRestaurant) {
             sum += review.getStars();
         }
         this.stars = sum / reviewRestaurant.size();
+        return this.stars;
     }
 
-    public void addReview(Review review) {
+    public double addReview(Review review) {
 
         if (!reviewRestaurant.contains(review)) {
             this.reviewRestaurant.add(review);
             avgStars();
         }
+        return avgStars();
     }
 
     public String getName() {

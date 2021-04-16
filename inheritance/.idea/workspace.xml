@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="09969eb0-8578-496e-9886-43cb76b6f8b0" name="Default Changelist" comment="" />
+    <list default="true" id="cd1774a4-6213-40fb-9cd3-bba44ddff6f1" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -172,7 +175,7 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="09969eb0-8578-496e-9886-43cb76b6f8b0" name="Default Changelist" comment="" />
+      <changelist id="cd1774a4-6213-40fb-9cd3-bba44ddff6f1" name="Default Changelist" comment="" />
       <created>1618130656821</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />

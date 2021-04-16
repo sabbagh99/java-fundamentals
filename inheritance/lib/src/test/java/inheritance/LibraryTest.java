@@ -4,32 +4,21 @@
 package inheritance;
 
 import org.junit.Test;
-import static org.junit.Assert.*;
+
+import static org.junit.Assert.assertEquals;
+
 
 public class LibraryTest {
-    @Test public  void testRestaurant(){
-        Restaurant restaurant = new Restaurant("Shawerma",3,30);
-        Restaurant restaurant1 = new Restaurant("Shawerma",7,50);
+    @Test
+    public void testRestaurant() {
 
-        assertEquals("Restaurant{name='Shawerma', numberOfStars=3, price=30$}",restaurant.toString());
-        assertEquals("you should add number of stars between 0-5",restaurant1.toString());
+        Restaurant shawermaRestaurent = new Restaurant("pizza Restaurent", "$$");
 
-
-    }
-//    @Test public  void testReview(){
-//
-//        Review review = new Review("Very good restaurant","Ahmad Alsabbagh",4,"shawerma",50);
-//
-//        Review review1 = new Review("Very good restaurant","Ahmad Alsabbagh",8,"shawerma",50);
-//
-//        assertEquals("Review{body='Very good restaurant', author='Ahmad Alsabbagh', numberOfStars=4,restaurantName =shawerma, price=50$}",review.toString());
-//        assertEquals("you should add number of stars between 0-5",review1.toString());
-//
-//
-//    }
-    @Test public  void  testShop(){
-        Shop shop = new Shop("ali Baba","online shop",50);
-        assertEquals("Shop{name='ali Baba', description='online shop', number=50$}",shop.toString());
+        Review shawermaReview = new Review("ahmad alsabbagh", 3, "not bad", shawermaRestaurent);
+        shawermaRestaurent.addReview(shawermaReview);
+        assertEquals("Restaurant{name='pizza Restaurent', stars=3.0, price='$$',review[Review :, body='not bad'author='ahmad alsabbagh', stars=3restarunt name pizza Restaurent}]}", shawermaRestaurent.toString());
+        assertEquals("Review :, body='not bad'author='ahmad alsabbagh', stars=3restarunt name pizza Restaurent}", shawermaReview.toString());
+        assertEquals(3.0, shawermaRestaurent.addReview(shawermaReview), 0);
 
     }
 }

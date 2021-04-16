@@ -13,9 +13,19 @@ public class Library {
         Review shawermaReview2 = new Review("ahmad alsabbagh", 4, "very good",shawermaRestaurent);
 
         Review burgerReview = new Review(" abdullah ", 4, " nice one ",burgerResturant);
-//        shawermaRestaurent.addReview(shawermaReview);
+        shawermaRestaurent.addReview(shawermaReview);
         System.out.println(shawermaReview);
-//        System.out.println(shawermaRestaurent);
+        System.out.println(shawermaRestaurent);
 
+//        Shop shop =new Shop("M&M","goooood","$$$");
+//        Review shopreview = new Review("Ahmad Alsabbagh",5,"nice",shop);
+//
+//
+//        System.out.println(shopreview);
+//
+//        Theater theater = new Theater("taj Cinama","mad max");
+//        Review theaterReview = new Review("Ahmad",5,"good move",theater);
+//        System.out.println(theater);
+//        System.out.println(theaterReview);
     }
 }
